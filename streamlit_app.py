@@ -22,7 +22,7 @@ def load_data():
     docs = reader.load_data()
 
     Settings.chunk_size = 1500
-    Settings.chunk_overlap = 50
+    Settings.chunk_overlap = 5
     Settings.embed_model = GeminiEmbedding()
     
     Settings.llm = Gemini(
