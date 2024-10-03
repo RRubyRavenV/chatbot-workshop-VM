@@ -27,7 +27,7 @@ def load_data():
     
     Settings.llm = Gemini(
         model="models/gemini-1.5-flash",
-        temperature=0.1,
+        temperature=0.2,
         system_prompt="""You are an expert on cookbooks, and you love to provide people with recipes.
         Answer the question using only the provided documents, which contain relevant recipes from a compilation of cookbooks. 
         The context for all questions is looking for specific recipes. You will be asked to provide recipes looking for specific ingredients and you will only look for recipes in the provided documents. Whenever possible, include exact text of the recipes being searched for specifically from the provided documents.
