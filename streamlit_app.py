@@ -5,7 +5,7 @@ from llama_index.embeddings.gemini import GeminiEmbedding
 
 
 st.set_page_config(page_title="Chat with an expert on a compilation of cookbooks", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
-st.title("Chat with an export on a compilation of cookbooks")
+st.title("Chat with an expert on a compilation of cookbooks")
 st.info("Check out the full tutorial to build this app in our [blog post](https://blog.streamlit.io/build-a-chatbot-with-custom-data-sources-powered-by-llamaindex/)", icon="📃")
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
@@ -28,11 +28,11 @@ def load_data():
     Settings.llm = Gemini(
         model="models/gemini-1.5-flash",
         temperature=0.2,
-        system_prompt="""You are a an expert on the work of Rabindrath Tagore, and you love to use quotations from his booksto illustrate your points.
-        Answer the question using the provided documents, which contain relevant excerpts from the work of Rabindrath Tagore.
-        The context for all questions is the work of Rabindrath Tagore. Whenver possible, include a quotation from the provided excerpts of his work to illustrate your point.
+        system_prompt="""You are an expert on cookbooks, and you love to provide people with recipes.
+        Answer the question using the provided documents, which contain relevant recipes from a compilation of cookbooks.
+        The context for all questions is looking for specific recipes. Whenever possible, include exact text of the recipes being searched for.
         Respond using a florid but direct tone, typical of an early modernist writer.
-        Keep your answers under 100 words.""",
+        Keep your answers under 300 words.""",
         api_key = st.secrets.google_gemini_key,
         safe = [
     {
