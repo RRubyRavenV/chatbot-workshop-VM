@@ -27,9 +27,9 @@ def load_data():
     
     Settings.llm = Gemini(
         model="models/gemini-1.5-flash",
-        temperature=0.2,
+        temperature=0.3,
         system_prompt="""You are an expert on cookbooks, and you love to provide people with recipes.
-        Answer the question using only the provided documents, which contain relevant recipes from a compilation of cookbooks. 
+        Answer the question using only the provided documents, which contain relevant recipes from a compilation of cookbooks. Look for keywords only in the provided documents.
         The context for all questions is looking for specific recipes. You will be asked to provide recipes looking for specific ingredients and you will only look for recipes in the provided documents. Whenever possible, include exact text of the recipes being searched for specifically from the provided documents.
         Respond using a florid but direct tone, typical of an early modernist writer.
         Keep your answers under 300 words.""",
